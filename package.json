@@ -1,5 +1,5 @@
 {
-  "name": "@foo-software/content",
+  "name": "@foo-software/react-scroll-context",
   "version": "0.0.3",
   "description": "A React scroll context provider and consumer for detecting scroll position (scrollX, scrollY) and providing that data to child components.",
   "main": "build/index.js",

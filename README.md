@@ -65,7 +65,7 @@ yarn add @foo-software/react-scroll-context
 
 ```jsx
 import react from 'react';
-import { ScrollProvider, ScrollContext } from '@foo-software/react-scroll-context`;
+import { ScrollProvider, ScrollContext } from '@foo-software/react-scroll-context';
 
 const ScrollDisplay = () => (
   <ScrollProvider>
@@ -89,7 +89,7 @@ const ScrollDisplay = () => (
 
 ```jsx
 import react, { Component } from 'react';
-import { ScrollProvider, ScrollContext } from '@foo-software/react-scroll-context`;
+import { ScrollProvider, ScrollContext } from '@foo-software/react-scroll-context';
 
 class ScrollDisplay extends Component {
   static contextType = ScrollContext;
@@ -119,7 +119,7 @@ const App = () => (
 
 ```jsx
 import react, { useContext } from 'react';
-import { ScrollProvider, ScrollContext } from '@foo-software/react-scroll-context`;
+import { ScrollProvider, ScrollContext } from '@foo-software/react-scroll-context';
 
 const ScrollDisplay = () => {
   const { scrollX, scrollY, isScrollingDown } = useContext(ScrollContext);
