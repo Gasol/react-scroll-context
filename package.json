@@ -1,7 +1,7 @@
 {
   "name": "react-scroll-data-provider",
   "version": "0.0.1",
-  "description": "A React scroll provider that detects scroll position (scrollX, scrollY) and provides that data to child components. ",
+  "description": "A React scroll provider for detecting scroll position (scrollX, scrollY) and providing that data to child components.",
   "main": "build/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,14 +11,15 @@
     "url": "git+https://github.com/foo-software/react-scroll-data-provider.git"
   },
   "keywords": [
-    "react",
-    "react",
     "component",
-    "scroll",
-    "scroll",
+    "foo",
     "handler",
+    "react",
+    "provider",
     "scroll",
-    "provider"
+    "scroll handler",
+    "scroll provider",
+    "www.foo.software"
   ],
   "author": "Adam Henson <adamhenson1979@gmail.com> (https://github.com/adamhenson)",
   "license": "MIT",
