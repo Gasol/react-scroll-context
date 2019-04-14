@@ -103,8 +103,12 @@ const ScrollDisplay = () => (
 import React, { Component } from 'react';
 import { ScrollProvider } from '@foo-software/react-scroll-context';
 
+// replace `scroll-context` any name you like.
+const Context = React.createContext('scroll-context');
+
 class ScrollDisplay extends Component {
-  static Context = Context;
+  static contextType = Context;
+
   render() {
     const { scrollX, scrollY, isScrollingDown } = this.context;
     return (
@@ -116,9 +120,6 @@ class ScrollDisplay extends Component {
     );
   }
 }
-
-// replace `scroll-context` any name you like.
-const Context = React.createContext('scroll-context');
 
 const App = () => (
   <ScrollProvider
@@ -138,8 +139,11 @@ const App = () => (
 import React, { useContext } from 'react';
 import { ScrollProvider } from '@foo-software/react-scroll-context';
 
+// replace `scroll-context` any name you like.
+const Context = React.createContext('scroll-context');
+
 const ScrollDisplay = () => {
-  const { scrollX, scrollY, isScrollingDown } = useContext(ScrollContext);
+  const { scrollX, scrollY, isScrollingDown } = useContext(Context);
   return (
     <pre>
       scrollX: {scrollX}
@@ -148,9 +152,6 @@ const ScrollDisplay = () => {
     </pre>
   );
 };
-
-// replace `scroll-context` any name you like.
-const Context = React.createContext('scroll-context');
 
 const App = () => (
   <ScrollProvider
