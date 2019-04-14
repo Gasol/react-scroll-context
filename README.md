@@ -1,6 +1,20 @@
 # `@foo-software/react-scroll-context`
 
-> **React Scroll Context** exports a [React context](https://reactjs.org/docs/context.html) provider and consumer. It provides `window` scroll data to a consumer. 
+> **React Scroll Context** exports a [React context](https://reactjs.org/docs/context.html) provider and consumer. It provides `window` scroll data to a consumer.
+
+## Install
+
+> npm
+
+```
+npm install @foo-software/react-scroll-context
+```
+
+> yarn
+
+```
+yarn add @foo-software/react-scroll-context
+```
 
 ## Props
 
