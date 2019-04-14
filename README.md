@@ -1,3 +1,4 @@
+# !IMPORTANT: This package is currently unstable - do not install (4/14/19)
 # `@foo-software/react-scroll-context`
 
 > **React Scroll Context** exports a [React context](https://reactjs.org/docs/context.html) provider and consumer. It provides `window` scroll data to a consumer.
