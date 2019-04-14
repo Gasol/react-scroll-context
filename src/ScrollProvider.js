@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 import throttle from './helpers/throttle';
 
 const ScrollProvider = ({ Context, children, throttleTime }) => {
+  if (typeof window === 'undefined') {
+    return null;
+  }
+
   const [isScrollingDown, setIsScrollingDown] = useState(false);
   const [scrollX, setScrollX] = useState(0);
   const [scrollY, setScrollY] = useState(0);
@@ -21,12 +25,10 @@ const ScrollProvider = ({ Context, children, throttleTime }) => {
   // imitating `componentDidMount` lifecycle method.
   useEffect(
     () => {
-      if (typeof window !== 'undefined') {
-        window.addEventListener('scroll', onScroll, false);
-        return () => {
-          window.removeEventListener('scroll', onScroll, false);
-        };
-      }
+      window.addEventListener('scroll', onScroll, false);
+      return () => {
+        window.removeEventListener('scroll', onScroll, false);
+      };
     },
     [],
   );
