@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import ScrollContext from './ScrollContext';
 import throttle from './helpers/throttle';
 
-const ScrollProvider = ({ children, throttleTime }) => {
+const ScrollProvider = ({ Context, children, throttleTime }) => {
   const [isScrollingDown, setIsScrollingDown] = useState(false);
   const [scrollX, setScrollX] = useState(0);
   const [scrollY, setScrollY] = useState(0);
@@ -31,7 +30,7 @@ const ScrollProvider = ({ children, throttleTime }) => {
   );
 
   return (
-    <ScrollContext.Provider
+    <Context.Provider
       value={{
         isScrollingDown,
         scrollX,
@@ -39,11 +38,12 @@ const ScrollProvider = ({ children, throttleTime }) => {
       }}
     >
       {children}
-    </ScrollContext.Provider>
+    </Context.Provider>
   );
 };
 
 ScrollProvider.propTypes = {
+  Context: PropTypes.object.isRequired,
   children: PropTypes.node.isRequired,
   throttleTime: PropTypes.number,
 };

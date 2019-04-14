@@ -27,6 +27,13 @@ yarn add @foo-software/react-scroll-context
     <th>Default</th>
   </tr>
   <tr>
+    <td><code>Context</code></td>
+    <td>A <code>Context</code> object created by <code>React.createContext()</code></td>
+    <td><code>object</code></td>
+    <td><code>true</code></td>
+    <td><code>--</code></td>
+  </tr>
+  <tr>
     <td><code>children</code></td>
     <td>Anything that can be rendered, but typically a tree of elements. Scroll data can be consumed from anywhere in this tree.</td>
     <td><code>node</code></td>
@@ -64,14 +71,19 @@ yarn add @foo-software/react-scroll-context
 > Standard
 
 ```jsx
-import react from 'react';
-import { ScrollProvider, ScrollContext } from '@foo-software/react-scroll-context';
+import React from 'react';
+import { ScrollProvider } from '@foo-software/react-scroll-context';
+
+// replace `scroll-context` any name you like.
+const Context = React.createContext('scroll-context');
 
 const ScrollDisplay = () => (
-  <ScrollProvider>
+  <ScrollProvider
+    Context={Context}
+  >
     <div>
       <h1>Scroll it!</h1>
-      <ScrollContext.Consumer>
+      <Context.Consumer>
         {({ scrollX, scrollY, isScrollingDown }) => (
           <pre>
             scrollX: {scrollX}
@@ -79,7 +91,7 @@ const ScrollDisplay = () => (
             isScrollingDown: {scrollY}
           </pre>
         )}
-      </ScrollContext.Consumer>
+      </Context.Consumer>
     </div>
   </ScrollProvider>
 );
@@ -88,11 +100,11 @@ const ScrollDisplay = () => (
 > Class
 
 ```jsx
-import react, { Component } from 'react';
-import { ScrollProvider, ScrollContext } from '@foo-software/react-scroll-context';
+import React, { Component } from 'react';
+import { ScrollProvider } from '@foo-software/react-scroll-context';
 
 class ScrollDisplay extends Component {
-  static contextType = ScrollContext;
+  static Context = Context;
   render() {
     const { scrollX, scrollY, isScrollingDown } = this.context;
     return (
@@ -105,8 +117,13 @@ class ScrollDisplay extends Component {
   }
 }
 
+// replace `scroll-context` any name you like.
+const Context = React.createContext('scroll-context');
+
 const App = () => (
-  <ScrollProvider>
+  <ScrollProvider
+    Context={Context}
+  >
     <div>
       <h1>Scroll it!</h1>
       <ScrollDisplay />
@@ -118,8 +135,8 @@ const App = () => (
 > [`useContext`](https://reactjs.org/docs/hooks-reference.html#usecontext) hook
 
 ```jsx
-import react, { useContext } from 'react';
-import { ScrollProvider, ScrollContext } from '@foo-software/react-scroll-context';
+import React, { useContext } from 'react';
+import { ScrollProvider } from '@foo-software/react-scroll-context';
 
 const ScrollDisplay = () => {
   const { scrollX, scrollY, isScrollingDown } = useContext(ScrollContext);
@@ -132,8 +149,13 @@ const ScrollDisplay = () => {
   );
 };
 
+// replace `scroll-context` any name you like.
+const Context = React.createContext('scroll-context');
+
 const App = () => (
-  <ScrollProvider>
+  <ScrollProvider
+    Context={Context}
+  >
     <div>
       <h1>Scroll it!</h1>
       <ScrollDisplay />
