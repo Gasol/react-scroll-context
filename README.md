@@ -59,14 +59,22 @@ yarn add @foo-software/react-scroll-context
   <tr>
     <th>Name</th>
     <th>Description</th>
+    <th>Type</th>
   </tr>
   <tr>
     <td><code>scrollX</code></td>
     <td>The current value of <code>window.scrollX</code>.</td>
+    <td><code>number</code></td>
   </tr>
   <tr>
     <td><code>scrollY</code></td>
     <td>The current value of <code>window.scrollY</code>.</td>
+    <td><code>number</code></td>
+  </tr>
+  <tr>
+    <td><code>isScrollingDown</code></td>
+    <td>Identifies whether or not scroll direction is down.</td>
+    <td><code>boolean</code></td>
   </tr>
 </table>
 
