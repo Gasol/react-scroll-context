@@ -88,8 +88,8 @@ const ScrollDisplay = () => (
         {({ scrollX, scrollY, isScrollingDown }) => (
           <pre>
             scrollX: {scrollX}
-            scrollY: {scrollX}
-            isScrollingDown: {scrollY}
+            scrollY: {scrollY}
+            isScrollingDown: {isScrollingDown ? 'yes' : 'no'}
           </pre>
         )}
       </Context.Consumer>
@@ -115,8 +115,8 @@ class ScrollDisplay extends Component {
     return (
       <pre>
         scrollX: {scrollX}
-        scrollY: {scrollX}
-        isScrollingDown: {scrollY}
+        scrollY: {scrollY}
+        isScrollingDown: {isScrollingDown ? 'yes' : 'no'}
       </pre>
     );
   }
@@ -148,8 +148,8 @@ const ScrollDisplay = () => {
   return (
     <pre>
       scrollX: {scrollX}
-      scrollY: {scrollX}
-      isScrollingDown: {scrollY}
+      scrollY: {scrollY}
+      isScrollingDown: {isScrollingDown ? 'yes' : 'no'}
     </pre>
   );
 };

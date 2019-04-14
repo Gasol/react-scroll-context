@@ -1,3 +1,1 @@
-import ScrollProvider from './ScrollProvider';
-
-export { ScrollProvider };
+export { default as ScrollProvider } from './ScrollProvider';
