@@ -16,6 +16,10 @@ npm install @foo-software/react-scroll-context
 yarn add @foo-software/react-scroll-context
 ```
 
+## Dependencies
+
+- `react@16.8`
+
 ## Props
 
 <table>
