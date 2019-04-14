@@ -21,10 +21,12 @@ const ScrollProvider = ({ Context, children, throttleTime }) => {
   // imitating `componentDidMount` lifecycle method.
   useEffect(
     () => {
-      window.addEventListener('scroll', onScroll, false);
-      return () => {
-        window.removeEventListener('scroll', onScroll, false);
-      };
+      if (typeof window !== 'undefined') {
+        window.addEventListener('scroll', onScroll, false);
+        return () => {
+          window.removeEventListener('scroll', onScroll, false);
+        };
+      }
     },
     [],
   );
