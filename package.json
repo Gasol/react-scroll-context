@@ -1,7 +1,7 @@
 {
-  "name": "react-scroll-data-provider",
+  "name": "react-scroll-context",
   "version": "0.0.1",
-  "description": "A React scroll provider for detecting scroll position (scrollX, scrollY) and providing that data to child components.",
+  "description": "A React scroll context provider and consumer for detecting scroll position (scrollX, scrollY) and providing that data to child components.",
   "main": "build/index.js",
   "peerDependencies": {
     "react": "^16.8",
@@ -13,15 +13,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/foo-software/react-scroll-data-provider.git"
+    "url": "git+https://github.com/foo-software/react-scroll-context.git"
   },
   "keywords": [
     "component",
+    "context",
     "foo",
     "handler",
     "react",
+    "react context",
     "provider",
     "scroll",
+    "scroll context",
     "scroll handler",
     "scroll provider",
     "www.foo.software"
@@ -29,9 +32,9 @@
   "author": "Adam Henson <adamhenson1979@gmail.com> (https://github.com/adamhenson)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/foo-software/react-scroll-data-provider/issues"
+    "url": "https://github.com/foo-software/react-scroll-context/issues"
   },
-  "homepage": "https://github.com/foo-software/react-scroll-data-provider#readme",
+  "homepage": "https://github.com/foo-software/react-scroll-context#readme",
   "devDependencies": {
     "@babel/cli": "^7.4.3",
     "@babel/core": "^7.4.3",
