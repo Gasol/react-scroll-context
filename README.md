@@ -130,4 +130,4 @@ const App = () => (
 
 ## Credits
 
-> <img src="https://s3.amazonaws.com/foo.software/images/logo-200x200.png" width="100" height="100" /> Ipsum lorem ipsum lorem. Ipsum lorem ipsum lorem. Ipsum lorem ipsum lorem. Ipsum lorem ipsum lorem. Ipsum lorem ipsum lorem.
+> <img src="https://s3.amazonaws.com/foo.software/images/logo-200x200.png" width="100" height="100" /> <p>Ipsum lorem ipsum lorem. Ipsum lorem ipsum lorem. Ipsum lorem ipsum lorem. Ipsum lorem ipsum lorem. Ipsum lorem ipsum lorem.</p>
