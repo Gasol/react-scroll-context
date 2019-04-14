@@ -51,11 +51,11 @@ yarn add @foo-software/react-scroll-context
   </tr>
   <tr>
     <td><code>scrollX</code></td>
-    <td>The current value of `window.scrollX`</td>
+    <td>The current value of <code>window.scrollX</code>.</td>
   </tr>
   <tr>
     <td><code>scrollY</code></td>
-    <td>The current value of `window.scrollY`</td>
+    <td>The current value of <code>window.scrollY</code>.</td>
   </tr>
 </table>
 
