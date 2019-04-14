@@ -130,4 +130,4 @@ const App = () => (
 
 ## Credits
 
-> <img src="https://s3.amazonaws.com/foo.software/images/logo-200x200.png" width="100" height="100" align="left" /> Ipsum lorem ipsum lorem. Ipsum lorem ipsum lorem. Ipsum lorem ipsum lorem. Ipsum lorem ipsum lorem. Ipsum lorem ipsum lorem.
+> <img src="https://s3.amazonaws.com/foo.software/images/logo-200x200.png" width="100" height="100" align="left" /> This package was brought to you by [Foo - a website performance monitoring tool](https://www.foo.software). Create a **free account** providing standard performance testing. Features include automatic website performance testing over time, uptime checks, charts showing performance metrics by day, month, and year. Foo also provides real time notifications when performance has degraded or improved. With uptime check accounts notifications are sent when a web page is down. Users can integrate email, Slack and PagerDuty notifications.
