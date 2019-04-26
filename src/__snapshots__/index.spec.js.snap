@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@foo-software/react-scroll-context package should match snapshot 1`] = `
+Object {
+  "ScrollProvider": [Function],
+}
+`;
