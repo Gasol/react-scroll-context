@@ -1,6 +1,6 @@
 {
   "name": "@foo-software/react-scroll-context",
-  "version": "0.0.23-0",
+  "version": "0.0.24-0",
   "description": "A React scroll context provider and consumer for detecting scroll position (scrollX, scrollY) and providing that data to child components.",
   "main": "build/index.js",
   "peerDependencies": {
