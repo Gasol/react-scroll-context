@@ -29,6 +29,13 @@ const ScrollProvider = ({
       ? scrollContainer.scrollTop
       : scrollContainer.scrollY;
 
+    console.table({
+      scrollContainerX,
+      scrollContainerY,
+      scrollX: scrollX.current,
+      scrollY: scrollY.current,
+    });
+
     // if scroll has changed
     if (scrollContainerX !== scrollX.current || scrollContainerY !== scrollY.current) {
       isScrollingDown.current = scrollContainerY > scrollY.current;
