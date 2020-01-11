@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import throttle from './helpers/throttle';
 
@@ -12,9 +12,10 @@ const ScrollProvider = ({
     return children;
   }
 
-  const [isScrollingDown, setIsScrollingDown] = useState(false);
-  const [scrollX, setScrollX] = useState(0);
-  const [scrollY, setScrollY] = useState(0);
+  // `useRef` instead of `useState` to persist scroll state without re-render
+  const isScrollingDown = useRef(false);
+  const scrollX = useRef(0);
+  const scrollY = useRef(0);
 
   // handle scroll
   const onScroll = throttle(() => {
@@ -29,11 +30,10 @@ const ScrollProvider = ({
       : scrollContainer.scrollY;
 
     // if scroll has changed
-    if (scrollContainerX !== scrollX || scrollContainerY !== scrollY) {
-      console.log('scrollContainerY > scrollY', scrollContainerY > scrollY);
-      setIsScrollingDown(scrollContainerY > scrollY);
-      setScrollX(scrollContainerX);
-      setScrollY(scrollContainerY);
+    if (scrollContainerX !== scrollX.current || scrollContainerY !== scrollY.current) {
+      isScrollingDown.current = scrollContainerY > scrollY.current;
+      scrollX.current = scrollContainerX;
+      scrollY.current = scrollContainerY;
     }
   }, throttleTime);
 
