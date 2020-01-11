@@ -30,6 +30,7 @@ const ScrollProvider = ({
 
     // if scroll has changed
     if (scrollContainerX !== scrollX || scrollContainerY !== scrollY) {
+      console.log('scrollContainerY > scrollY', scrollContainerY > scrollY);
       setIsScrollingDown(scrollContainerY > scrollY);
       setScrollX(scrollContainerX);
       setScrollY(scrollContainerY);
