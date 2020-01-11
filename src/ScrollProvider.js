@@ -52,9 +52,9 @@ const ScrollProvider = ({
   return (
     <Context.Provider
       value={{
-        isScrollingDown,
-        scrollX,
-        scrollY,
+        isScrollingDown: isScrollingDown.current,
+        scrollX: scrollX.current,
+        scrollY: scrollY.current,
       }}
     >
       {children}
