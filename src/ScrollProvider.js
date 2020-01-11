@@ -6,7 +6,7 @@ const ScrollProvider = ({
   Context,
   children,
   scrollContainer,
-  throttleTime
+  throttleTime,
 }) => {
   if (typeof scrollContainer === 'undefined') {
     return children;
@@ -66,7 +66,7 @@ ScrollProvider.propTypes = {
 
 ScrollProvider.defaultProps = {
   throttleTime: 200,
-  scrollContainer: scrollContainer,
+  scrollContainer: window,
 };
 
 export default ScrollProvider;
