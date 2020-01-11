@@ -45,6 +45,13 @@ yarn add @foo-software/react-scroll-context
     <td><code>--</code></td>
   </tr>
   <tr>
+    <td><code>scrollContainer</code></td>
+    <td>A scroll container. This will be <code>window</code> by default, but you could use an element instead with this option.</td>
+    <td><code>oneOf[PropTypes.object, PropTypes.node]</code></td>
+    <td><code>false</code></td>
+    <td><code>window</code></td>
+  </tr>
+  <tr>
     <td><code>throttleTime</code></td>
     <td>Time in milleseconds to throttle calculations of scroll.</td>
     <td><code>number</code></td>

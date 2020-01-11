@@ -2,8 +2,13 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import throttle from './helpers/throttle';
 
-const ScrollProvider = ({ Context, children, throttleTime }) => {
-  if (typeof window === 'undefined') {
+const ScrollProvider = ({
+  Context,
+  children,
+  scrollContainer,
+  throttleTime
+}) => {
+  if (typeof scrollContainer === 'undefined') {
     return children;
   }
 
@@ -13,11 +18,17 @@ const ScrollProvider = ({ Context, children, throttleTime }) => {
 
   // handle scroll
   const onScroll = throttle(() => {
+    // `scrollX` for `window`, `scrollLeft` for an element
+    const scrollContainerX = scrollContainer.scrollX || scrollContainer.scrollLeft;
+
+    // `scrollY` for `window`, `scrollTop` for an element
+    const scrollContainerY = scrollContainer.scrollX || scrollContainer.scrollTop;
+
     // if scroll has changed
-    if (window.scrollX !== scrollX || window.scrollY !== scrollY) {
-      setIsScrollingDown(window.scrollY > scrollY);
-      setScrollX(window.scrollX);
-      setScrollY(window.scrollY);
+    if (scrollContainerX !== scrollX || scrollContainerY !== scrollY) {
+      setIsScrollingDown(scrollContainerY > scrollY);
+      setScrollX(scrollContainerX);
+      setScrollY(scrollContainerY);
     }
   }, throttleTime);
 
@@ -25,9 +36,9 @@ const ScrollProvider = ({ Context, children, throttleTime }) => {
   // imitating `componentDidMount` lifecycle method.
   useEffect(
     () => {
-      window.addEventListener('scroll', onScroll, false);
+      scrollContainer.addEventListener('scroll', onScroll, false);
       return () => {
-        window.removeEventListener('scroll', onScroll, false);
+        scrollContainer.removeEventListener('scroll', onScroll, false);
       };
     },
     [],
@@ -49,11 +60,13 @@ const ScrollProvider = ({ Context, children, throttleTime }) => {
 ScrollProvider.propTypes = {
   Context: PropTypes.object.isRequired,
   children: PropTypes.node.isRequired,
+  scrollContainer: PropTypes.oneOf([PropTypes.node, PropTypes.object]),
   throttleTime: PropTypes.number,
 };
 
 ScrollProvider.defaultProps = {
   throttleTime: 200,
+  scrollContainer: scrollContainer,
 };
 
 export default ScrollProvider;
