@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import throttle from './helpers/throttle';
 
@@ -17,6 +17,11 @@ const ScrollProvider = ({
   const scrollX = useRef(0);
   const scrollY = useRef(0);
 
+  // trigger re-render by setting these
+  const [isScrollingDownValue, setIsScrollingDownValue] = useState(false);
+  const [scrollXValue, setScrollXValue] = useState(0);
+  const [scrollYValue, setScrollYValue] = useState(0);
+
   // handle scroll
   const onScroll = throttle(() => {
     // `scrollX` for `window`, `scrollLeft` for an element
@@ -29,18 +34,16 @@ const ScrollProvider = ({
       ? scrollContainer.scrollTop
       : scrollContainer.scrollY;
 
-    console.table({
-      scrollContainerX,
-      scrollContainerY,
-      scrollX: scrollX.current,
-      scrollY: scrollY.current,
-    });
-
     // if scroll has changed
     if (scrollContainerX !== scrollX.current || scrollContainerY !== scrollY.current) {
       isScrollingDown.current = scrollContainerY > scrollY.current;
       scrollX.current = scrollContainerX;
       scrollY.current = scrollContainerY;
+
+      // trigger re-render
+      setIsScrollingDownValue(isScrollingDown.current);
+      setScrollXValue(scrollX.current);
+      setScrollYValue(scrollY.current);
     }
   }, throttleTime);
 
@@ -59,9 +62,9 @@ const ScrollProvider = ({
   return (
     <Context.Provider
       value={{
-        isScrollingDown: isScrollingDown.current,
-        scrollX: scrollX.current,
-        scrollY: scrollY.current,
+        isScrollingDown: isScrollingDownValue,
+        scrollX: scrollXValue,
+        scrollY: scrollYValue,
       }}
     >
       {children}
