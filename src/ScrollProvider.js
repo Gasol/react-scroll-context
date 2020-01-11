@@ -19,10 +19,14 @@ const ScrollProvider = ({
   // handle scroll
   const onScroll = throttle(() => {
     // `scrollX` for `window`, `scrollLeft` for an element
-    const scrollContainerX = scrollContainer.scrollX || scrollContainer.scrollLeft;
+    const scrollContainerX = typeof scrollContainer.scrollX === 'undefined'
+    ? scrollContainer.scrollLeft
+    : scrollContainer.scrollX;
 
     // `scrollY` for `window`, `scrollTop` for an element
-    const scrollContainerY = scrollContainer.scrollX || scrollContainer.scrollTop;
+    const scrollContainerY = typeof scrollContainer.scrollY === 'undefined'
+      ? scrollContainer.scrollTop
+      : scrollContainer.scrollY;
 
     // if scroll has changed
     if (scrollContainerX !== scrollX || scrollContainerY !== scrollY) {
