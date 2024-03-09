@@ -56,7 +56,7 @@ const ScrollProvider = ({
         scrollContainer.removeEventListener('scroll', onScroll, false);
       };
     },
-    [],
+    [scrollContainer],
   );
 
   return (
